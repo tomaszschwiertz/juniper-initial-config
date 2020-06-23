@@ -1,0 +1,23 @@
+
+set system host-name R1
+set system root-authentication encrypted-password "$6$6xO1.HNG$XXqzJ04PBXbkKVc3mk8/O5d32fDLqx6TjVJK7IyGSWdyGKr23VdGxsc7z/jm16bTHCpsVjTzyM8H7CopUZC810"
+set system login user ops uid 2001
+set system login user ops class super-user
+set system login user ops authentication encrypted-password "$6$NO387E/x$1uZlO1gsaec9ki/BVsyc1TNYPeCfPisyJKWy/prV66tNhfgcND3i8xPvzK07osmvL2cv5XXPf8t3HntAB4A2M."
+
+set chassis fpc 0 lite-mode
+delete chassis auto-image-upgrade
+set routing-options autonomous-system 100
+
+
+set interfaces ge-0/0/1 unit 0 family inet address 10.0.0.1/24
+set interfaces ge-0/0/1 unit 0 family mpls
+
+
+set interfaces lo0 unit 0 family inet address 192.168.1.1/32
+set routing-options router-id 192.168.1.1
+
+set protocols ospf area 0.0.0.0 interface lo0.0
+set protocols ospf area 0.0.0.0 interface ge-0/0/1.0
+
+set protocols rsvp interface ge-0/0/1.0
