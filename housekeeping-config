@@ -10,7 +10,8 @@ set system login user ops authentication encrypted-password "$6$NO387E/x$1uZlO1g
 set chassis fpc 0 lite-mode
 delete chassis auto-image-upgrade
 
-
+//////////////////////////////////////
+login: ops password: Opsops
 //////////////////////////////////////
 The above config is enough to have a route running and maintaining it’s configuration.
 From now-on – rest us lest to the engineer to add.
@@ -24,3 +25,17 @@ where x is the number of the lowest-numbered router connected to the P-t-P link 
 So the link between R3 and R5 has the network 10.0.35.0/24. OSPF configuration forces P-t-P link type.
 
 P-t-P link interface address: on a P-t-P link 10.0.xy.0/24 router Rx has address 10.0.xy.x and router Ry has address 10.0.xy.y
+
+
+///CISCO Endpoints:
+hostname R1-SOURCE
+!
+interface FastEthernet0/0
+ no shutdown
+ ip address 30.0.0.2 255.255.255.0
+ speed auto
+ full-duplex
+!
+ip route 0.0.0.0 0.0.0.0 30.0.0.1 250
+
+
