@@ -33,7 +33,7 @@ hostname R1-SOURCE
 interface FastEthernet0/0
  no shutdown
  ip address 30.0.0.2 255.255.255.0
- speed auto
+ speed 100
  full-duplex
 !
 ip route 0.0.0.0 0.0.0.0 30.0.0.1 250
