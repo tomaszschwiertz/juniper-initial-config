@@ -17,7 +17,7 @@ From now-on – rest us lest to the engineer to add.
 
 Good incidence on IP Addressing scheme:
 
-Loopback Addresses: they take the form of 100.0.0.x with x the number of the router. So R5 has 100.0.0.5 as loopback address
+Loopback Addresses: they take the form of 200.0.0.x with x the number of the router. So R5 has 200.0.0.5 as loopback address
 
 P-t-P link Subnet: even if a /30 would be sufficient, we use a /24 network, which allows us to use the scheme 10.0.xy.0/24,
 where x is the number of the lowest-numbered router connected to the P-t-P link and y is the number of the highest-numbered router connected to the P-t-P link.
