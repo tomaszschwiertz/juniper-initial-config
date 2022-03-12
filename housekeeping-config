@@ -39,3 +39,13 @@ interface FastEthernet0/0
 ip route 0.0.0.0 0.0.0.0 30.0.0.1 250
 
 
+hostname R1-RECEIVER
+!
+interface FastEthernet0/0
+ no shutdown
+ ip address 30.0.0.3 255.255.255.0
+ speed 100
+ full-duplex
+!
+ip route 0.0.0.0 0.0.0.0 30.0.0.1 250
+
